@@ -46,6 +46,8 @@ for index, match in df.iterrows():
         new_df.loc[:date, home_team] += 1
         new_df.loc[:date, away_team] += 1
 
+new_df = new_df.sort_values(by='Date',ascending=True)  # sort the DataFrame by 'Date'
+
 # Save the new DataFrame to a CSV file
 new_df.to_csv('points_table.csv', index=True)
 
